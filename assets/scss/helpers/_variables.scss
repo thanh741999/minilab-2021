@@ -1,6 +1,7 @@
 //
 // Colors
 //
+$bg-gradient: linear-gradient(to right, #c9923c, #d9b278);
 
 // Default
 $color-default: #f2f2f2;
@@ -9,6 +10,7 @@ $color-default-lighter: #c2c2c2;
 $color-default-darker: #acacac;
 $color-default-darkest: #000;
 $color-default-dark: #111111;
+$color-main: #dab279;
 
 // Primary colors
 $color-primary: #EE295F;
@@ -47,8 +49,8 @@ $hsize: $size/2;
 //$info-phone: "only screen and (max-width : 640px)";
 
 $info-tablet-horizontal: "only screen and (max-width : 1160px)";
-$info-tablet-vertical: "only screen and (max-width : 900px)";
-$info-phone: "only screen and (max-width : 767px)";
-$info-phone-4: "only screen and (max-width : 320px)";
+$info-tablet-vertical: "only screen and (max-width : 991px)";
+$info-phone: "only screen and (max-width : 776px)";
+$info-phone-4: "only screen and (max-width : 425px)";
 
 $primary-green: #0eb493;

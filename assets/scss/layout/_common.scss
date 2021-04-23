@@ -15,8 +15,45 @@ h1, h2, h3, h4, h5 {
 
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
 }
 
 img {
   max-width: 100%;
+}
+button {
+  border: none;
+  outline: unset;
+  &:hover {
+    opacity: .8;
+  }
+}
+.container {
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+h2.title {
+  color: #000000;
+  padding-bottom: 25px;
+  border-bottom: 4px solid $color-main;
+  z-index: 2;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 80%;
+    background-color: blanchedalmond;
+    position: absolute;
+    bottom: -5px;
+  }
 }

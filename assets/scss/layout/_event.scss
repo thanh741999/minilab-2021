@@ -1,0 +1,27 @@
+.event {
+    @include flex;
+    position: relative;
+    img {
+        position: absolute;
+        width: 50%;
+    }
+    &__content {
+        width: 45%;
+        margin-left: auto;
+        h2 {
+            border-bottom: 5px solid black;
+            position: relative;
+            padding-bottom: 40px;
+            &::after {
+                content: "";
+                display: block;
+                height: 5px;
+                width: 80%;
+                background-color: blanchedalmond;
+                position: absolute;
+                bottom: -5px;
+                z-index: 2;
+            }
+        }
+    }
+}
