@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5 {
   padding: 0;
   box-sizing: border-box;
 }
+
 ul {
   list-style-type: none;
 }
@@ -25,35 +26,140 @@ ul {
 img {
   max-width: 100%;
 }
+
+// ===== hover button=====
 button {
   border: none;
   outline: unset;
+
   &:hover {
     opacity: .8;
   }
 }
+
 .container {
   @media screen and (min-width: 1200px) {
     width: 1200px;
   }
+
   &:before,
   &:after {
     display: none;
   }
 }
+
+// ======= section title========
 h2.title {
+  @include font-size(48px);
   color: #000000;
   padding-bottom: 25px;
-  border-bottom: 4px solid $color-main;
+  border-bottom: 4px solid #ededed;
   z-index: 2;
   position: relative;
+
   &::before {
     content: "";
     display: block;
-    height: 5px;
-    width: 80%;
-    background-color: blanchedalmond;
+    height: 4px;
+    width: 170px;
+    background-color: $color-main;
     position: absolute;
-    bottom: -5px;
+    bottom: -4px;
+  }
+}
+
+// ======= date =========
+.date {
+  background-color: #f8f8f8;
+  min-width: 12%;
+  @include flex;
+  flex-direction: column;
+  padding: 0 5px;
+  max-height: 70px;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    @include font-size(24px);
+    color: #898989;
+
+    &:first-child {
+      color: #c9923b;
+      border-bottom: 1px solid #e1e1e1;
+    }
+  }
+}
+
+// ====== slick slider =======
+.slick-dots {
+  list-style-type: none;
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-right: 3px solid #dab279;
+
+  &::after {
+    content: " ";
+    display: inline-block;
+    height: 14px;
+    margin-right: 5px;
+    border-right: 3px solid #dab279;
+  }
+
+  .slick-active {
+    background-color: #c9923b;
+  }
+
+  li {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    border: 1px solid #e2e2e2;
+    border-radius: 50%;
+    transition: background-color 0.3s linear;
+    margin-right: 10px;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+.slick-list {
+  padding-bottom: 20px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #ebebeb;
+
+  &:hover img:first-child {
+    display: none;
+  }
+
+  &:hover img:last-child {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    background-color: $color-main;
+  }
+
+  .arrow-img {
+    transform: rotate(180deg);
+  }
+
+  .arrow-hidden {
+    display: none;
   }
 }

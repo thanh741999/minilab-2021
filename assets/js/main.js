@@ -12,6 +12,12 @@ $(document).ready(function(){
         var index = $(this).attr('idx');
         slider(index,'.course__main__content','.course__menu li','course__menu--active')
     })
+    var slider = function(stt,slider,dot,active) {
+        $(slider).hide();
+        $(slider).eq(stt).show();
+        $(dot).removeClass(active);
+        $(dot).eq(stt).addClass(active);
+    }
     // ====== filter=======
     $('.course__main__title li').click(function(){
         var value = $(this).attr('dataFilter');
@@ -27,12 +33,6 @@ $(document).ready(function(){
         }
         $('.view-all').css('display','none');
     })
-    var slider = function(stt,slider,dot,active) {
-        $(slider).hide();
-        $(slider).eq(stt).show();
-        $(dot).removeClass(active);
-        $(dot).eq(stt).addClass(active);
-    }
     // ====== view all======
     $('b').click(function() {
         $('.item').css("display","flex");
@@ -71,16 +71,59 @@ $(document).ready(function(){
                 slidesToScroll: 1
             }
             }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
         ]
-        });
-	
-        // move_top.addEventListener('click',function () {
-        //     window.scrollTo({
-        //         top:0,
-        //         behavior: "smooth",
-        //     })
-        // })
+    });
+    // ========== Feel slider==========
+    $('.feel__slider').slick({
+        dots: true,
+        infinite: true,
+        prevArrow: '.feel__prev',
+        nextArrow: '.feel__next',
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+            },
+            {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            },
+            {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            }
+        ]
+    });
+    // ========== move to top=========
+	$(window).scroll(function (e){
+        const scroll_top = document.documentElement.scrollTop;
+        var move_top = $('.move__top')[0];
+        var slide_height = $('.banner').innerHeight();
+        if(scroll_top >= slide_height) {
+            move_top.style.display = "block";
+        }
+        else {
+            move_top.style.display =" none";
+        }
+        move_top.addEventListener('click',function () {
+            window.scrollTo({
+                top:0,
+                behavior: "smooth",
+            })
+        })
+    })
 })
