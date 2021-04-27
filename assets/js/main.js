@@ -33,12 +33,12 @@ $(document).ready(function(){
         }
         $('.view-all').css('display','none');
     })
-    // ====== view all======
+    // ====== view all=======
     $('b').click(function() {
         $('.item').css("display","flex");
         $('.view-all').css('display','none');
     })
-    // =====slick slider======
+    // =====slick slider=======
     $('.book__slider').slick({
         dots: true,
         infinite: true,
