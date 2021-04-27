@@ -1,0 +1,195 @@
+.about {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    &__item {
+      width: 50%;
+      padding: 94px 100px 100px 0;
+      color: #000000;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 171px;
+        left: 0;
+        background-color: #e5e5e5;
+        height: 4px;
+        width: 200%;
+        transform: translateX(-58%);
+        @media screen and (max-width: 1160px) {
+          top: 169px;
+        }
+        @media #{$info-tablet-vertical} {
+          top: 165px;
+        }
+        @media #{$info-phone} {
+          top: 158px;
+        }
+        @media #{$info-phone-4} {
+          top: 152px;
+        }
+      }
+
+      @media #{$info-phone} {
+        width: 100%;
+      }
+
+      h2.title {
+        border-bottom: unset;
+        @media #{$info-phone-4} {
+          font-size: 2.5rem;
+        }
+      }
+
+      &__text {
+        padding-top: 20px;
+
+        p:first-child {
+          @include font-size(24px);
+          margin-bottom: 18px;
+          line-height: 1.9rem;
+        }
+
+        p:nth-of-type(2) {
+          @include font-size(14px);
+          margin-bottom: 25px;
+        }
+
+        button {
+          padding: 13px 62px 12px 63px;
+          background-color: #404040;
+          border-radius: 30px;
+
+          a {
+            text-transform: uppercase;
+            color: $color-main;
+            @include font-size(14px);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    &__img {
+      background-image: url(../img/aboutMe-1.png);
+      background-position: center;
+      background-size: cover;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      @media #{$info-phone} {
+        position: static;
+      }
+      @media #{$info-phone} {
+        width: 100%;
+        height: 550px;
+      }
+    }
+
+
+    // ========content 2==========
+    &--bottom {
+      background-image: url(../img/aboutMe-2.png);
+      background-position: center;
+      background-size: cover;
+      height: 620px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 50%;
+        background-color: rgba(91, 89, 90, .8);
+        position: absolute;
+        top: 0;
+        right: 0;
+        @media #{$info-phone} {
+          width: 100%;
+        }
+      }
+
+      @include flex();
+      flex-wrap: wrap;
+      @media #{$info-phone} {
+        height: 550px;
+      }
+    }
+
+    &__right {
+      width: 50%;
+      color: #ffffff;
+      padding: 92px 0 0 60px;
+      font-weight: 300;
+      position: relative;
+      margin-left: auto;
+      @media #{$info-phone} {
+        width: 100%;
+        padding-left: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 169px;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        display: block;
+        background-color: #5e5c5b;
+        @media screen and (max-width: 1160px) {
+          top: 166px;
+        }
+        @media #{$info-tablet-vertical} {
+          top: 155px;
+        }
+        @media #{$info-phone} {
+          top: 156px;
+        }
+        @media #{$info-phone-4} {
+          top: 143px;
+        }
+      }
+
+      h2.title {
+        border-bottom: unset;
+        color: #ffffff;
+        @media #{$info-tablet-vertical} {
+          font-size: 2.5rem;
+        }
+        @media #{$info-phone} {
+          font-size: 3rem;
+        }
+        @media #{$info-phone-4} {
+          font-size: 2rem;
+        }
+      }
+
+      &__text {
+        padding-top: 25px;
+
+        p:first-child {
+          margin-bottom: 25px;
+        }
+
+        button {
+          padding: 12px 46px 12px;
+          background: $bg-gradient;
+          border-radius: 30px;
+
+          a {
+            text-transform: uppercase;
+            color: #ffffff;
+            @include font-size(14px);
+            font-weight: bold
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.footer {
+  padding: 98px 0 75px;
+  position: relative;
+
+  &__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/footer-bg.png);
+    background-position: center;
+    background-size: cover;
+    width: 40%;
+    height: 100%;
+  }
+
+  &__contact {
+    width: 60%;
+    margin-left: auto;
+    padding-left: 30px;
+
+    .info {
+      @include flex;
+      flex-wrap: wrap;
+      color: #898989;
+      padding-bottom: 29px;
+      border-bottom: 1px solid #e1e1e1;
+
+      &__location {
+        width: 50%;
+        padding-right: 10px;
+        @media #{$info-tablet-vertical} {
+          width: 100%;
+          margin-bottom: 25px;
+        }
+
+        a {
+          color: #898989;
+        }
+      }
+
+      &__time {
+        width: 50%;
+        padding-left: 10px;
+        @media #{$info-tablet-vertical} {
+          width: 100%;
+          padding-left: 0;
+        }
+      }
+
+      p {
+        padding: 0;
+        line-height: 24px;
+      }
+    }
+
+    .contact--title {
+      color: #000000;
+      @include font-size(18px);
+      margin-bottom: 12px;
+    }
+
+    .contact__us {
+      @include flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #e1e1e1;
+      @media #{$info-phone} {
+        flex-direction: column;
+      }
+
+      ul {
+        @include flex;
+        @media #{$info-phone} {
+          flex-direction: column;
+        }
+
+        li {
+          margin-right: 6px;
+          @media #{$info-phone} {
+            margin-bottom: 20px;
+          }
+
+          a {
+            @include font-size(12px);
+            color: #ffffff;
+            display: block;
+
+            i {
+              @include font-size(12px);
+            }
+
+            &:hover {
+              opacity: .8;
+            }
+          }
+
+          &:nth-of-type(1) {
+            a {
+              padding: 13px 34px;
+              background-color: #4c6ea9;
+              border-radius: 20px;
+            }
+          }
+
+          &:nth-of-type(2 ) {
+            a {
+              padding: 12px 36px;
+              background-color: #ff5838;
+              border-radius: 20px;
+            }
+          }
+
+          &:nth-of-type(3) {
+            a {
+              padding: 13px 35px;
+              background-color: #dc3833;
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      padding-top: 15px;
+      color: #898989;
+      @include font-size(14px);
+    }
+  }
+}

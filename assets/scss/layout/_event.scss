@@ -1,0 +1,154 @@
+.event {
+  @include flex;
+  position: relative;
+  flex-wrap: wrap;
+
+  &__img {
+    background: url(../img/event-bg.png);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    @media #{$info-phone} {
+      height: 550px;
+      width: 100%;
+      position: relative;
+    }
+
+    &__content {
+      width: 55%;
+      position: absolute;
+      bottom: 20%;
+      right: 0;
+      padding-right: 20px;
+
+      p {
+        @include font-size(14px);
+        color: $color-main;
+        margin-bottom: 13px;
+
+        &:nth-of-type(2) {
+          @include font-size(24px);
+          color: #ffffff;
+          margin-bottom: 20px;
+          line-height: 28px;
+        }
+      }
+
+      button {
+        background: $bg-gradient;
+        padding: 10px 22px 11px 23px;
+        border-radius: 20px;
+
+        a {
+          text-transform: uppercase;
+          font-weight: bold;
+          color: #ffffff;
+          @include font-size(12px);
+        }
+      }
+    }
+  }
+
+  &__right {
+    width: 50%;
+    margin-left: auto;
+    padding: 95px 0 60px 70px;
+    position: relative;
+    @media #{$info-phone} {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    &::before {
+      content: "";
+      height: 4px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      top: 172px;
+      left: 0;
+      background-color: #ebebeb;
+      @media screen and (max-width: 1160px) {
+        top: 170px;
+      }
+      @media #{$info-tablet-vertical} {
+        top: 166px;
+      }
+      @media #{$info-phone} {
+        top: 159px;
+      }
+      @media screen and (max-width: 328px) {
+        top: 146px;
+      }
+    }
+
+    h2.title {
+      border-bottom: unset;
+      @media only screen and (max-width: 328px) {
+        font-size: 2rem;
+      }
+    }
+
+    &__content {
+      @include flex;
+      padding: 34px 0 23px;
+      border-bottom: 1px solid #e1e1e1;
+
+      &:last-child {
+        border-bottom: unset;
+        padding-bottom: 0;
+      }
+
+      .content__detail {
+        padding-left: 14px;
+        width: 88%;
+
+        button {
+          background: $bg-gradient;
+          margin-bottom: 13px;
+
+          a {
+            padding: 0 21px;
+            @include font-size(12px);
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+          }
+        }
+
+        i {
+          @include font-size(14px);
+          color: #898989;
+        }
+
+        h3 {
+          @include font-size(18px);
+          color: #000000;
+          margin-bottom: 8px
+        }
+
+        p {
+          color: #898989;
+          @include font-size(14px);
+          margin-bottom: 3px;
+        }
+
+        b {
+          text-transform: uppercase;
+          color: #000000;
+          cursor: pointer;
+          @include font-size(12px);
+
+          i {
+            @include font-size(12px);
+            color: $color-main;
+          }
+        }
+      }
+    }
+  }
+}

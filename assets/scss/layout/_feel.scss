@@ -1,0 +1,72 @@
+.feel {
+  padding: 97px 0 100px;
+  background-image: url(../img/Feel-bg.png);
+  text-align: center;
+  color: #ffffff;
+
+  .container {
+    position: relative;
+  }
+
+  h2.title {
+    color: #f8f8f8;
+    border-bottom-color: rgba(98, 95, 92, .3);
+
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+    }
+  }
+
+  &__slider {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 39px;
+    padding-bottom: 55px;
+
+    &__item {
+      text-align: center;
+
+      h3 {
+        @include font-size(18px);
+        color: $color-main;
+        margin-bottom: 27px
+      }
+
+      p {
+        @include font-size(14px);
+        margin-bottom: 29px
+      }
+
+      h4 {
+        @include font-size(18px);
+        margin-bottom: 6px;
+      }
+
+      span {
+        @include font-size(12px);
+        color: $color-main;
+      }
+    }
+
+    .slick-list {
+      padding-bottom: 0;
+    }
+  }
+
+  &__prev {
+    left: 0;
+  }
+
+  &__next {
+    right: 0;
+  }
+
+  .slick-arrow {
+    top: 50%;
+    @media #{$info-phone-4} {
+      display: none;
+    }
+  }
+}
